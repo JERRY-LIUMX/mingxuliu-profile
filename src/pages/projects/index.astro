@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
+---
+
+<BaseLayout title="Projects — Mingxu Liu" description="Research and engineering projects in medical robotics, computer vision, AR/XR, and medical imaging.">
+  <div class="site-wrap">
+    <section class="project-detail" style="padding-top:48px;">
+      <div class="section-label">Portfolio</div>
+      <h1 class="section-title">Projects</h1>
+      <p style="color:var(--muted);font-size:0.95rem;margin-bottom:36px;max-width:600px;">
+        Research and engineering work spanning medical robotics, computer vision, medical image analysis, augmented reality, and real-time systems.
+      </p>
+      <div class="project-grid">
+        {projects.map(p => <ProjectCard project={p} />)}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

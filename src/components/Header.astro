@@ -1,0 +1,17 @@
+---
+import { profile } from '../data/profile';
+const pathname = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="brand">{profile.name}</a>
+    <nav class="site-nav">
+      <a href="/" class={pathname === '/' ? 'active' : ''}>Home</a>
+      <a href="/projects" class={pathname.startsWith('/projects') ? 'active' : ''}>Projects</a>
+      <a href="/experience" class={pathname === '/experience' ? 'active' : ''}>Experience</a>
+      <a href="/publications" class={pathname === '/publications' ? 'active' : ''}>Publications</a>
+      <a href="/cv" class={pathname === '/cv' ? 'active' : ''}>CV</a>
+    </nav>
+  </div>
+</header>

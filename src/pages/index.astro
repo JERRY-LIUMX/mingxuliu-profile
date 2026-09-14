@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PublicationItem from '../components/PublicationItem.astro';
+import { profile } from '../data/profile';
+import { education } from '../data/education';
+import { projects } from '../data/projects';
+import { publications } from '../data/publications';
+
+const featuredProjects = projects.filter(p => p.featured).slice(0, 6);
+const featuredPubs = publications.filter(p => p.featured).slice(0, 4);
+---
+
+<BaseLayout>
+  <div class="site-wrap">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <div class="hero-eyebrow">{profile.tagline}</div>
+        <h1 class="hero-name">{profile.name}</h1>
+        <p class="hero-role">{profile.role} · {profile.institution}</p>
+        {profile.availability && (
+          <div class="availability">{profile.availability}</div>
+        )}
+        <p class="hero-intro">{profile.intro}</p>
+        <div class="hero-links">
+          <a href="/projects" class="primary">View Projects</a>
+          <a href="/cv">CV / Resume</a>
+          {profile.links.linkedin && (
+            <a href={profile.links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+          )}
+          {profile.links.scholar && (
+            <a href={profile.links.scholar} target="_blank" rel="noopener">Google Scholar</a>
+          )}
+          {profile.links.github && (
+            <a href={profile.links.github} target="_blank" rel="noopener">GitHub</a>
+          )}
+          <a href={`mailto:${profile.email}`}>Email</a>
+        </div>
+      </div>
+      <img
+        src={profile.photo}
+        alt={`${profile.name} profile photo`}
+        class="profile-photo"
+        width="200"
+        height="240"
+      />
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="section">
+      <div class="section-label">Research & Engineering</div>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="project-grid">
+        {featuredProjects.map(p => <ProjectCard project={p} />)}
+      </div>
+      <p style="margin-top: 24px;">
+        <a href="/projects" style="font-size:0.9rem; font-weight:600; color:var(--accent);">
+          View all projects →
+        </a>
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <div class="section-label">Background</div>
+      <h2 class="section-title">Education</h2>
+      <div class="education-list">
+        {education.map(e => (
+          <div class="education-entry">
+            <div class="edu-degree">{e.degree}</div>
+            <div class="edu-school">{e.school}</div>
+            <div class="edu-meta">{e.location} · {e.dates}</div>
+            {e.note && <div class="edu-note">{e.note}</div>}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Selected Publications -->
+    <section class="section">
+      <div class="section-label">Publications</div>
+      <h2 class="section-title">Selected Publications</h2>
+      <div class="pub-list">
+        {featuredPubs.map(p => <PublicationItem pub={p} />)}
+      </div>
+      <p style="margin-top: 24px;">
+        <a href="/publications" style="font-size:0.9rem; font-weight:600; color:var(--accent);">
+          View all publications →
+        </a>
+      </p>
+    </section>
+  </div>
+</BaseLayout>

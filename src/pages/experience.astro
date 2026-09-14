@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ExperienceBlock from '../components/ExperienceBlock.astro';
+import { experience } from '../data/experience';
+import { education } from '../data/education';
+import { service } from '../data/service';
+---
+
+<BaseLayout title="Experience — Mingxu Liu" description="Research and industry experience in medical robotics, computer vision, and AR/XR.">
+  <div class="narrow-wrap">
+    <div style="padding: 56px 0 80px;">
+      <div class="section-label">Background</div>
+      <h1 class="section-title">Experience</h1>
+
+      <!-- Research & Industry -->
+      <section class="section" style="padding-top:0;">
+        <div style="margin-bottom:32px;">
+          {experience.map(e => <ExperienceBlock entry={e} />)}
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section">
+        <div class="section-label">Academic</div>
+        <h2 class="section-title" style="font-size:1.4rem;">Education</h2>
+        <div class="education-list">
+          {education.map(e => (
+            <div class="education-entry">
+              <div class="edu-degree">{e.degree}</div>
+              <div class="edu-school">{e.school}</div>
+              <div class="edu-meta">{e.location} · {e.dates}</div>
+              {e.note && <div class="edu-note">{e.note}</div>}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Professional Service -->
+      <section class="section">
+        <div class="section-label">Service</div>
+        <h2 class="section-title" style="font-size:1.4rem;">Professional Service</h2>
+        <div class="service-list">
+          {service.map(s => (
+            <div class="service-entry">
+              <span class="service-role">{s.role}</span>
+              <span class="service-info">
+                {s.event} · <em>{s.venue}</em>
+                <span class="service-dates"> · {s.dates}</span>
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

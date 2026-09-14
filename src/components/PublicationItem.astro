@@ -1,0 +1,26 @@
+---
+import type { Publication } from '../data/publications';
+import { profile } from '../data/profile';
+
+interface Props {
+  pub: Publication;
+}
+
+const { pub } = Astro.props;
+
+// Bold the profile author's name in the author list
+const authorDisplay = pub.authors.replace(
+  new RegExp(`\\b${profile.name}\\b`, 'g'),
+  `<strong>${profile.name}</strong>`
+);
+---
+
+<div class="pub-item">
+  <div class="pub-title">{pub.title}</div>
+  <div class="pub-authors" set:html={authorDisplay} />
+  <div class="pub-venue">{pub.venue}</div>
+  <div class="pub-footer">
+    {pub.status && <span class="pub-status">{pub.status}</span>}
+    {pub.url && <a href={pub.url} target="_blank" rel="noopener" class="pub-link">Paper →</a>}
+  </div>
+</div>

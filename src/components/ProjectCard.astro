@@ -1,0 +1,23 @@
+---
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<a href={`/projects/${project.slug}`} class="project-card">
+  <div class="project-card-eyebrow">{project.eyebrow}</div>
+  <div class="project-card-title">{project.title}</div>
+  <div class="project-card-short">{project.short}</div>
+  {project.metrics && project.metrics.length > 0 && (
+    <div class="project-card-metrics">
+      {project.metrics.slice(0, 2).map(m => (
+        <span class="metric-chip">{m.value}<span>{m.label}</span></span>
+      ))}
+    </div>
+  )}
+  <div class="project-card-status">{project.status}</div>
+</a>

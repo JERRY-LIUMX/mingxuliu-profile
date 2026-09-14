@@ -1,0 +1,25 @@
+---
+import type { ExperienceEntry } from '../data/experience';
+
+interface Props {
+  entry: ExperienceEntry;
+}
+
+const { entry } = Astro.props;
+---
+
+<div class="experience-block">
+  <div class="exp-header">
+    <span class="exp-role">{entry.role}</span>
+    <span class="exp-dates">{entry.dates}</span>
+  </div>
+  <div class="exp-org">{entry.organization}</div>
+  <div class="exp-location">{entry.location}</div>
+  <div class="exp-summary">{entry.summary}</div>
+  <ul class="exp-bullets">
+    {entry.bullets.map(b => <li>{b}</li>)}
+  </ul>
+  <div class="exp-skills">
+    {entry.skills.map(s => <span class="exp-skill">{s}</span>)}
+  </div>
+</div>

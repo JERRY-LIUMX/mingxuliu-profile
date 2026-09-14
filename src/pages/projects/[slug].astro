@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/projects';
+import type { Project } from '../../data/projects';
+
+export async function getStaticPaths() {
+  return projects.map(p => ({
+    params: { slug: p.slug },
+    props: { project: p }
+  }));
+}
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<BaseLayout
+  title={`${project.title} — Mingxu Liu`}
+  description={project.description}
+>
+  <div class="narrow-wrap">
+    <div class="project-detail">
+      <a href="/projects" class="project-back">← All Projects</a>
+
+      <div class="project-detail-eyebrow">{project.eyebrow}</div>
+      <h1 class="project-detail-title">{project.title}</h1>
+      <div class="project-detail-status">{project.status}</div>
+
+      <div class="project-media-placeholder">
+        Project media coming soon — figures, diagrams, and demo videos will appear here.
+      </div>
+
+      <div class="project-body">
+        <div class="project-main">
+          <p class="project-desc">{project.description}</p>
+
+          <div class="project-contributions">
+            <h3>Contributions</h3>
+            <ul>
+              {project.contributions.map(c => <li>{c}</li>)}
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-sidebar">
+          {project.metrics && project.metrics.length > 0 && (
+            <div class="sidebar-card">
+              <h3>Key Results</h3>
+              <div class="metrics-list">
+                {project.metrics.map(m => (
+                  <div class="metric-row">
+                    <div class="metric-value">{m.value}</div>
+                    <div class="metric-label">{m.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div class="sidebar-card">
+            <h3>Technical Stack</h3>
+            <div class="stack-tags">
+              {project.stack.map(s => <span class="stack-tag">{s}</span>)}
+            </div>
+          </div>
+
+          {project.paper && (
+            <a href={project.paper} target="_blank" rel="noopener" class="project-paper-link">
+              Read Paper →
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
