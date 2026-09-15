@@ -16,6 +16,9 @@ interface Props {
 
 const { project } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const imageSrc = project.image
+  ? `${base}/images/${encodeURIComponent(project.image)}`
+  : null;
 ---
 
 <BaseLayout
@@ -30,24 +33,41 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <h1 class="project-detail-title">{project.title}</h1>
       <div class="project-detail-status">{project.status}</div>
 
-      <div class="project-media-placeholder">
-        Project media coming soon — figures, diagrams, and demo videos will appear here.
-      </div>
+      {imageSrc ? (
+        <div class="project-media">
+          <img
+            src={imageSrc}
+            alt={`${project.title} figure`}
+            class="project-figure"
+          />
+          {project.imageAttribution && (
+            <p class="figure-attribution">{project.imageAttribution}</p>
+          )}
+        </div>
+      ) : (
+        <div class="project-media-placeholder">
+          Project media coming soon — figures, diagrams, and demo videos will appear here.
+        </div>
+      )}
 
       <div class="project-body">
         <div class="project-main">
           <p class="project-desc">{project.description}</p>
 
-          <div class="project-contributions">
-            <h3>Contributions</h3>
-            <ul>
-              {project.contributions.map(c => <li>{c}</li>)}
-            </ul>
-          </div>
+          {project.comingSoon ? (
+            <p class="coming-soon-note">Details coming soon — manuscript under preparation.</p>
+          ) : (
+            <div class="project-contributions">
+              <h3>Contributions</h3>
+              <ul>
+                {project.contributions.map(c => <li>{c}</li>)}
+              </ul>
+            </div>
+          )}
         </div>
 
         <div class="project-sidebar">
-          {project.metrics && project.metrics.length > 0 && (
+          {!project.comingSoon && project.metrics && project.metrics.length > 0 && (
             <div class="sidebar-card">
               <h3>Key Results</h3>
               <div class="metrics-list">
@@ -73,8 +93,41 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               Read Paper →
             </a>
           )}
+          {project.challenge && (
+            <a href={project.challenge} target="_blank" rel="noopener" class="project-paper-link">
+              Challenge Website →
+            </a>
+          )}
+          {project.presentation && (
+            <a href={project.presentation} target="_blank" rel="noopener" class="project-paper-link">
+              View Presentation →
+            </a>
+          )}
         </div>
       </div>
     </div>
   </div>
 </BaseLayout>
+
+<style>
+  .project-media {
+    margin: 2rem 0;
+  }
+  .project-figure {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+    display: block;
+  }
+  .figure-attribution {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+  .coming-soon-note {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 1rem;
+  }
+</style>

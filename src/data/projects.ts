@@ -13,6 +13,11 @@ export interface Project {
   stack: string[];
   metrics?: Metric[];
   paper?: string;
+  presentation?: string;
+  challenge?: string;
+  image?: string;
+  imageAttribution?: string;
+  comingSoon?: boolean;
   status: string;
   featured: boolean;
 }
@@ -25,18 +30,9 @@ export const projects: Project[] = [
     short: 'Low-latency multimodal reconstruction combining fluoroscopic segmentation, tracking, and robot encoders.',
     description:
       'An end-to-end real-time perception system for continuum surgical robots that fuses TensorRT-accelerated fluoroscopic segmentation, optical tracking data, and robot encoder inputs to reconstruct the 3D robot shape at clinical latency.',
-    contributions: [
-      'Architected the full multimodal perception pipeline integrating fluoroscopic segmentation, NDI optical tracking, and robot encoder data.',
-      'Deployed TensorRT-accelerated segmentation within NVIDIA Isaac ROS/NITROS for sub-50 ms end-to-end processing.',
-      'Designed the ROS 2 system architecture for real-time data fusion and 3D reconstruction.',
-      'Validated reconstruction accuracy on cadaveric and phantom data.'
-    ],
+    contributions: [],
     stack: ['PyTorch', 'TensorRT', 'CUDA', 'ROS 2', 'NVIDIA Isaac ROS/NITROS', 'Optical Tracking', 'Sensor Fusion', 'C++', 'Python'],
-    metrics: [
-      { value: '0.68 mm', label: '3D reconstruction error' },
-      { value: '47 ms', label: 'end-to-end latency' },
-      { value: '~21 Hz', label: 'system update rate' }
-    ],
+    comingSoon: true,
     status: 'Ongoing',
     featured: true
   },
@@ -47,19 +43,10 @@ export const projects: Project[] = [
     short: 'A 6-DoF C-arm positioning-guidance system that reduces trial-and-error fluoroscopy through kinematic calibration and real-time pose feedback.',
     description:
       'CARPA provides real-time 6-DoF guidance for C-arm positioning using geometric calibration, forward and inverse kinematics, optical tracking, and a Unity visualization interface, eliminating the need for iterative X-ray shots during positioning.',
-    contributions: [
-      'Developed the geometric calibration and forward/inverse kinematics model for the C-arm.',
-      'Integrated NDI Polaris optical tracking for real-time C-arm pose estimation.',
-      'Built the Unity visualization and guidance interface for the positioning assistant.',
-      'Designed and conducted a 12-participant user study validating the system.'
-    ],
+    contributions: [],
     stack: ['Kinematics', 'Inverse Kinematics', 'ROS 2', 'Unity', 'NDI Polaris', 'C-arm Calibration', 'C++', 'C#'],
-    metrics: [
-      { value: '87.2%', label: 'reduction in X-ray usage' },
-      { value: '72.8%', label: 'reduction in perceived workload' },
-      { value: '6.8 mm', label: 'translation error norm' }
-    ],
-    status: 'Published',
+    comingSoon: true,
+    status: 'Ongoing',
     featured: true
   },
   {
@@ -82,6 +69,8 @@ export const projects: Project[] = [
       { value: '8', label: 'expert-surgeon trajectories evaluated' }
     ],
     paper: 'https://arxiv.org/abs/2607.10873',
+    image: 'X-GuideAR.png',
+    imageAttribution: 'Figure from: M. Liu et al., "X-GuideAR: An Augmented Reality Framework to Mitigate Radiation Exposure during Fluoroscopic Guidance," arXiv:2607.10873, 2026. Manuscript under review at International Journal of Computer Assisted Radiology and Surgery.',
     status: 'Under review / preprint',
     featured: true
   },
@@ -103,7 +92,8 @@ export const projects: Project[] = [
       { value: '2.4 ± 1.0 mm', label: 'translation error' },
       { value: '1.6 ± 0.8°', label: 'rotation error' }
     ],
-    paper: 'https://doi.org/10.1007/s11548-025-03426-w',
+    paper: 'https://link.springer.com/article/10.1007/s11548-025-03426-w',
+    image: 'MRI-X-ray.PNG',
     status: 'Published',
     featured: true
   },
@@ -124,7 +114,8 @@ export const projects: Project[] = [
       { value: '0.93', label: 'femur Dice score' },
       { value: '0.91', label: 'pelvis Dice score' }
     ],
-    paper: 'https://doi.org/10.1080/21681163.2022.2157329',
+    paper: 'https://www.tandfonline.com/doi/abs/10.1080/21681163.2022.2157329',
+    image: 'ONFH.PNG',
     status: 'Published',
     featured: false
   },
@@ -145,6 +136,7 @@ export const projects: Project[] = [
       { value: '11,000', label: 'synthetic X-ray/depth pairs' },
       { value: '500+', label: 'real X-rays with CT-derived supervision' }
     ],
+    image: 'X-ray Depth.PNG',
     status: 'Ongoing',
     featured: true
   },
@@ -166,7 +158,8 @@ export const projects: Project[] = [
       { value: '500', label: 'CT cases (expanded challenge)' },
       { value: '340', label: 'participants worldwide' }
     ],
-    paper: 'https://doi.org/10.1109/TMI.2025.3650126',
+    paper: 'https://ieeexplore.ieee.org/abstract/document/11322550',
+    challenge: 'https://pengwin.grand-challenge.org/',
     status: 'Published',
     featured: false
   },
@@ -187,7 +180,7 @@ export const projects: Project[] = [
       { value: '~80%', label: 'reduction in translational error' },
       { value: '30%', label: 'reduction in tracking-loss rate' }
     ],
-    paper: 'https://doi.org/10.1109/VR67842.2026.00087',
+    paper: 'https://ieeexplore.ieee.org/abstract/document/11457564',
     status: 'Published',
     featured: false
   },
@@ -209,7 +202,9 @@ export const projects: Project[] = [
       { value: '32.86', label: 'PSNR' },
       { value: '0.89', label: 'SSIM' }
     ],
-    paper: 'https://doi.org/10.1049/htl2.12119',
+    paper: 'https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/htl2.12119',
+    image: 'arthro.jpg',
+    imageAttribution: 'Figure reproduced from: H. Shu, M. Liu, L. Seenivasan, et al., "Seamless Augmented Reality Integration in Arthroscopy: A Pipeline for Articular Reconstruction and Guidance," Healthcare Technology Letters, 12(1), e12119, 2025. Licensed under CC BY 4.0.',
     status: 'Published',
     featured: false
   },
@@ -226,11 +221,7 @@ export const projects: Project[] = [
       'Validated the 2D ML cranial-shape pipeline across 445 cases with high correlation to 3D reference.'
     ],
     stack: ['Computer Vision', 'RGB-D', '3D Reconstruction', 'Open3D', 'PyVista', 'Registration', 'Python'],
-    metrics: [
-      { value: '5.0 mm', label: 'head-circumference MAE' },
-      { value: '1.6 pts', label: 'cranial-index MAE' },
-      { value: '0.94–0.95', label: 'Spearman correlation (2D validation)' }
-    ],
+    presentation: 'https://2023.pas-meeting.org/PosterAgenda.asp?startdate=4/28/2023&enddate=4/28/2023&BCFO=P&pfp=BrowsebyPosterSession',
     status: 'Industry R&D',
     featured: false
   }
