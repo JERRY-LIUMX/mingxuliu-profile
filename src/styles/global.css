@@ -146,8 +146,8 @@ img { max-width: 100%; display: block; }
 .hero-links a.primary:hover { background: var(--ink); border-color: var(--ink); }
 
 .profile-photo {
-  width: 200px;
-  height: 240px;
+  width: 360px;
+  height: 440px;
   border-radius: var(--radius);
   object-fit: cover;
   background: var(--soft);
@@ -533,7 +533,7 @@ img { max-width: 100%; display: block; }
 /* ─── Responsive ──────────────────────────────────────────── */
 @media (max-width: 820px) {
   .hero { grid-template-columns: 1fr; }
-  .profile-photo { width: 140px; height: 168px; }
+  .profile-photo { width: 240px; height: 290px; }
   .project-body { grid-template-columns: 1fr; }
   .project-sidebar { order: -1; }
   .exp-header { flex-wrap: wrap; }
