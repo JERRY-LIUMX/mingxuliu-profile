@@ -26,7 +26,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <p class="hero-intro">{profile.intro}</p>
         <div class="hero-links">
           <a href={`${base}/projects`} class="primary">View Projects</a>
-          <a href={`${base}/cv`}>CV / Resume</a>
+          <a href={`${base}/docs/resume.pdf`} target="_blank" rel="noopener" download>Resume</a>
           {profile.links.linkedin && (
             <a href={profile.links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
           )}
