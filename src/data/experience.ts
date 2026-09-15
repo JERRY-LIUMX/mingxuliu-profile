@@ -17,13 +17,26 @@ export const experience: ExperienceEntry[] = [
     summary:
       'Ph.D. research at the intersection of medical robotics, computer vision, medical image analysis, augmented reality, and image-guided intervention.',
     bullets: [
-      'Architected real-time multimodal perception for continuum surgical robots using TensorRT-accelerated fluoroscopic segmentation, optical tracking, robot encoder data, ROS 2, and NVIDIA Isaac ROS/NITROS; achieved 0.68 mm reconstruction error at 47 ms latency.',
-      'Developed and validated 6-DoF C-arm kinematics and positioning guidance using geometric calibration, forward/inverse kinematics, optical tracking, and real-time pose estimation; reduced X-ray usage by 87.2% and perceived workload by 72.8% in a 12-participant study.',
+      'Continuum Manipulator 3D Sensing:',
+      'Architected a real-time multimodal perception pipeline for continuum surgical robots using TensorRT-accelerated fluoroscopic segmentation, optical tracking, robot encoder data, ROS 2, and NVIDIA Isaac ROS/NITROS.',
+      'C-Arm Position Guidance:',
+      'Developed and validated 6-DoF C-arm kinematics and positioning guidance using geometric calibration, forward/inverse kinematics, optical tracking, and real-time pose estimation; manuscript in preparation.',
+      'X-GuideAR:',
       'Led development of a real-time fluoroscopic AR navigation system integrating C-arm calibration, HoloLens tracking, CUDA-accelerated DRR generation, X-ray augmentation, and ZeroMQ communication; reduced X-ray usage by 62.3% and increased breach-free screw diameter from 5.9 mm to 12.95 mm in surgeon evaluation.',
-      'Co-led an MRI-to-fluoroscopy registration framework combining U-Net segmentation, cGAN-based MRI-to-CT synthesis, DRR generation, and multi-view 2D–3D registration; achieved 2.4 ± 1.0 mm translation and 1.6 ± 0.8° rotation error in cadaveric evaluation.',
-      'Developed MRI segmentation and registration methods for osteonecrosis localization, including 2D/3D U-Net segmentation of femur, pelvis, and necrotic lesions; achieved 0.93 Dice for femur and 0.91 Dice for pelvis.',
-      'Built data and evaluation infrastructure for the PENGWIN multimodal pelvic-fracture benchmark and co-organized MICCAI challenges spanning 48,600 simulated X-rays, later 500 CT cases, and 340 participants worldwide.',
-      'Contributed to AR/XR work involving multi-device tracking, dynamic scene graphs, pose-graph optimization, arthroscopic reconstruction, mixed-reality navigation, and visualization.'
+      'MRI-to-Fluoroscopy Registration:',
+      'Co-led an end-to-end MRI-to-fluoroscopy registration framework combining U-Net segmentation, cGAN-based MRI-to-CT synthesis, DRR generation, and multi-view 2D–3D registration; achieved 2.4 ± 1.0 mm translation and 1.6 ± 0.8° rotation error in cadaveric evaluation.',
+      'ONFH Preoperative Image Analysis:',
+      'Developed MRI segmentation and registration methods for osteonecrosis localization, including 2D/3D U-Net segmentation of the femur, pelvis, and necrotic lesions; achieved 0.93 Dice for femur and 0.91 Dice for pelvis.',
+      'Pelvic Fracture AI Benchmark:',
+      'Built data and evaluation infrastructure for the PENGWIN multimodal pelvic-fracture benchmark and co-organized MICCAI challenges spanning 48,600 simulated X-rays, later expanding to 500 CT cases and 340 participants worldwide.',
+      'Device-Agnostic AR Tracking:',
+      'Developed a multi-device tracking framework integrating HoloLens 2 and optical trackers through dynamic scene graphs and pose-graph optimization for robust spatial registration and AR guidance.',
+      'Medical AR/MR Literature Review & Taxonomy:',
+      'Conducted a systematic review of mixed- and augmented-reality applications in medical visualization, synthesizing existing systems, interaction paradigms, and clinical use cases; contributed to a context-aware taxonomy for characterizing AR/MR visualization methods in healthcare.',
+      'AR Arthroscopy Reconstruction & Guidance:',
+      'Investigated the use of augmented reality to enhance arthroscopic visualization and surgical guidance through articular-surface reconstruction, geometric measurement, image-based localization, and intraoperative AR visualization.',
+      'AR-Guided Prostate Biopsy:',
+      'Investigated how augmented-reality visual cues affect spatial guidance and needle-placement performance in a prostate-biopsy-inspired phantom task, with the goal of identifying visualization strategies that improve targeting accuracy and procedural usability.'
     ],
     skills: [
       'Medical Robotics', 'Computer Vision', 'Medical Imaging', 'AR/XR',
@@ -40,10 +53,14 @@ export const experience: ExperienceEntry[] = [
     summary:
       'Research in medical robotics, image-guided intervention, real-time perception, continuum-robot manipulation, and robotic control.',
     bullets: [
-      'Developing DINO–DPT single-view X-ray depth estimation; built 11,000 synthetic X-ray/depth pairs with CUDA-accelerated DRR and ray casting and 500+ real X-rays with CT-derived depth supervision recovered through 2D–3D registration.',
-      'Leading development of CT-to-fluoroscopy 2D–3D registration and surgical localization, aligning preoperative CT segmentations and surgical plans with intraoperative fluoroscopy.',
-      'Developed and evaluated image-guided teleoperation and continuum-robot manipulation for femoral-head core decompression, integrating preoperative planning, real-time manipulator perception, and visualization for steerable cadaveric drilling.',
-      'Developing a robot-control and system-integration stack combining UR10e Cartesian/force control, force–torque sensing, custom continuum-robot actuation, multimodal perception, and steerable-manipulator control toward automated execution of registered surgical plans.'
+      'Single-View X-ray Depth Estimation:',
+      'Developing learning-based methods for estimating anatomical depth from single fluoroscopic images using a combination of synthetic and real imaging data; ongoing work focuses on robust depth prediction for image-guided intervention.',
+      'Image-Based Surgical Navigation:',
+      'Leading development of image-based navigation methods for aligning preoperative anatomical information and surgical plans with intraoperative fluoroscopy to support real-time localization and procedural guidance.',
+      'Continuum-Robot Teleoperation:',
+      'Developing and evaluating image-guided teleoperation for steerable continuum robots in orthopedic procedures, integrating real-time perception, navigation, and operator visualization in cadaveric experiments.',
+      'Continuum-Robot Control & Automation:',
+      'Developing integrated perception and control methods for continuum-robot systems, combining robotic actuation, sensing, and real-time feedback toward increasingly automated execution of image-guided surgical tasks.'
     ],
     skills: [
       'Medical Robotics', 'Robot Perception', 'Depth Estimation',

@@ -17,9 +17,27 @@ const { entry } = Astro.props;
   <div class="exp-location">{entry.location}</div>
   <div class="exp-summary">{entry.summary}</div>
   <ul class="exp-bullets">
-    {entry.bullets.map(b => <li>{b}</li>)}
+    {entry.bullets.map(b =>
+      b.endsWith(':')
+        ? <li class="exp-bullet-heading">{b.slice(0, -1)}</li>
+        : <li>{b}</li>
+    )}
   </ul>
   <div class="exp-skills">
     {entry.skills.map(s => <span class="exp-skill">{s}</span>)}
   </div>
 </div>
+
+<style>
+  .exp-bullet-heading {
+    list-style: none;
+    margin-left: -1.2em;
+    margin-top: 0.75em;
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 0.9rem;
+  }
+  .exp-bullet-heading:first-child {
+    margin-top: 0;
+  }
+</style>
