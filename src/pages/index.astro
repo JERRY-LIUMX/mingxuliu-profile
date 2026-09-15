@@ -40,7 +40,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
       </div>
       <img
-        src={`${import.meta.env.BASE_URL}${profile.photo.replace(/^\//, '')}`}
+        src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/${profile.photo.replace(/^\//, '')}`}
         alt={`${profile.name} profile photo`}
         class="profile-photo"
         width="200"
