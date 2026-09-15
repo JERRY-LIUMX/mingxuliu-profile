@@ -24,49 +24,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: 'continuum-robot',
-    title: 'Real-Time Perception for Continuum Surgical Robots',
-    eyebrow: 'Medical Robotics · Real-Time AI',
-    short: 'Low-latency multimodal reconstruction combining fluoroscopic segmentation, tracking, and robot encoders.',
-    description:
-      'An end-to-end real-time perception system for continuum surgical robots that fuses TensorRT-accelerated fluoroscopic segmentation, optical tracking data, and robot encoder inputs to reconstruct the 3D robot shape at clinical latency.',
-    contributions: [],
-    stack: ['PyTorch', 'TensorRT', 'CUDA', 'ROS 2', 'NVIDIA Isaac ROS/NITROS', 'Optical Tracking', 'Sensor Fusion', 'C++', 'Python'],
-    comingSoon: true,
-    status: 'Ongoing',
-    featured: false
-  },
-  {
-    slug: 'carpa',
-    title: 'C-Arm Real-Time Positioning Assistant (CARPA)',
-    eyebrow: 'Robotics · Surgical Imaging',
-    short: 'A 6-DoF C-arm positioning-guidance system that reduces trial-and-error fluoroscopy through kinematic calibration and real-time pose feedback.',
-    description:
-      'CARPA provides real-time 6-DoF guidance for C-arm positioning using geometric calibration, forward and inverse kinematics, optical tracking, and a Unity visualization interface, eliminating the need for iterative X-ray shots during positioning.',
-    contributions: [],
-    stack: ['Kinematics', 'Inverse Kinematics', 'ROS 2', 'Unity', 'NDI Polaris', 'C-arm Calibration', 'C++', 'C#'],
-    comingSoon: true,
-    status: 'Ongoing',
-    featured: false
-  },
-  {
-    slug: 'xray-depth',
-    title: 'Single-View X-Ray Depth Estimation',
-    eyebrow: 'Medical AI · Depth Estimation',
-    short: 'Learning-based depth estimation from single X-ray images using synthetic data and registered real fluoroscopy.',
-    description:
-      'A DINO–DPT-based network for estimating depth from a single X-ray image, trained on a large synthetic dataset of X-ray/depth pairs generated via CUDA-accelerated DRR and ray casting, with additional real fluoroscopy supervision from CT-derived depth maps recovered through 2D–3D registration.',
-    contributions: [
-      'Designed the synthetic data generation pipeline using CUDA-accelerated DRR and ray casting to produce 11,000 X-ray/depth pairs.',
-      'Developed the 2D–3D registration pipeline to recover CT-derived depth supervision for 500+ real X-rays.',
-      'Adapted the DINO–DPT architecture for X-ray depth estimation.'
-    ],
-    stack: ['PyTorch', 'CUDA', 'DRR', 'Ray Casting', '2D–3D Registration', 'Python'],
-    comingSoon: true,
-    status: 'Ongoing',
-    featured: false
-  },
-  {
     slug: 'prostate-biopsy-ar',
     title: 'AR-Guided Prostate Biopsy',
     eyebrow: 'AR/XR · Image-Guided Intervention',
@@ -268,6 +225,49 @@ export const projects: Project[] = [
     image: 'Infant Head.png',
     presentation: 'https://2023.pas-meeting.org/PosterAgenda.asp?startdate=4/28/2023&enddate=4/28/2023&BCFO=P&pfp=BrowsebyPosterSession',
     status: 'Industry R&D',
+    featured: false
+  },
+  {
+    slug: 'continuum-robot',
+    title: 'Real-Time Perception for Continuum Surgical Robots',
+    eyebrow: 'Medical Robotics · Real-Time AI',
+    short: 'Low-latency multimodal reconstruction combining fluoroscopic segmentation, tracking, and robot encoders.',
+    description:
+      'An end-to-end real-time perception system for continuum surgical robots that fuses TensorRT-accelerated fluoroscopic segmentation, optical tracking data, and robot encoder inputs to reconstruct the 3D robot shape at clinical latency.',
+    contributions: [],
+    stack: ['PyTorch', 'TensorRT', 'CUDA', 'ROS 2', 'NVIDIA Isaac ROS/NITROS', 'Optical Tracking', 'Sensor Fusion', 'C++', 'Python'],
+    comingSoon: true,
+    status: 'Ongoing',
+    featured: false
+  },
+  {
+    slug: 'carpa',
+    title: 'C-Arm Real-Time Positioning Assistant (CARPA)',
+    eyebrow: 'Robotics · Surgical Imaging',
+    short: 'A 6-DoF C-arm positioning-guidance system that reduces trial-and-error fluoroscopy through kinematic calibration and real-time pose feedback.',
+    description:
+      'CARPA provides real-time 6-DoF guidance for C-arm positioning using geometric calibration, forward and inverse kinematics, optical tracking, and a Unity visualization interface, eliminating the need for iterative X-ray shots during positioning.',
+    contributions: [],
+    stack: ['Kinematics', 'Inverse Kinematics', 'ROS 2', 'Unity', 'NDI Polaris', 'C-arm Calibration', 'C++', 'C#'],
+    comingSoon: true,
+    status: 'Ongoing',
+    featured: false
+  },
+  {
+    slug: 'xray-depth',
+    title: 'Single-View X-Ray Depth Estimation',
+    eyebrow: 'Medical AI · Depth Estimation',
+    short: 'Learning-based depth estimation from single X-ray images using synthetic data and registered real fluoroscopy.',
+    description:
+      'A DINO–DPT-based network for estimating depth from a single X-ray image, trained on a large synthetic dataset of X-ray/depth pairs generated via CUDA-accelerated DRR and ray casting, with additional real fluoroscopy supervision from CT-derived depth maps recovered through 2D–3D registration.',
+    contributions: [
+      'Designed the synthetic data generation pipeline using CUDA-accelerated DRR and ray casting to produce 11,000 X-ray/depth pairs.',
+      'Developed the 2D–3D registration pipeline to recover CT-derived depth supervision for 500+ real X-rays.',
+      'Adapted the DINO–DPT architecture for X-ray depth estimation.'
+    ],
+    stack: ['PyTorch', 'CUDA', 'DRR', 'Ray Casting', '2D–3D Registration', 'Python'],
+    comingSoon: true,
+    status: 'Ongoing',
     featured: false
   }
 ];
