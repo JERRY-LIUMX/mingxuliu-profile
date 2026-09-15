@@ -9,6 +9,7 @@ import { publications } from '../data/publications';
 
 const featuredProjects = projects.filter(p => p.featured).slice(0, 6);
 const featuredPubs = publications.filter(p => p.featured).slice(0, 4);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout>
@@ -24,8 +25,8 @@ const featuredPubs = publications.filter(p => p.featured).slice(0, 4);
         )}
         <p class="hero-intro">{profile.intro}</p>
         <div class="hero-links">
-          <a href="/projects" class="primary">View Projects</a>
-          <a href="/cv">CV / Resume</a>
+          <a href={`${base}/projects`} class="primary">View Projects</a>
+          <a href={`${base}/cv`}>CV / Resume</a>
           {profile.links.linkedin && (
             <a href={profile.links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
           )}
@@ -55,7 +56,7 @@ const featuredPubs = publications.filter(p => p.featured).slice(0, 4);
         {featuredProjects.map(p => <ProjectCard project={p} />)}
       </div>
       <p style="margin-top: 24px;">
-        <a href="/projects" style="font-size:0.9rem; font-weight:600; color:var(--accent);">
+        <a href={`${base}/projects`} style="font-size:0.9rem; font-weight:600; color:var(--accent);">
           View all projects →
         </a>
       </p>
@@ -85,7 +86,7 @@ const featuredPubs = publications.filter(p => p.featured).slice(0, 4);
         {featuredPubs.map(p => <PublicationItem pub={p} />)}
       </div>
       <p style="margin-top: 24px;">
-        <a href="/publications" style="font-size:0.9rem; font-weight:600; color:var(--accent);">
+        <a href={`${base}/publications`} style="font-size:0.9rem; font-weight:600; color:var(--accent);">
           View all publications →
         </a>
       </p>

@@ -6,9 +6,10 @@ interface Props {
 }
 
 const { project } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<a href={`/projects/${project.slug}`} class="project-card">
+<a href={`${base}/projects/${project.slug}`} class="project-card">
   <div class="project-card-eyebrow">{project.eyebrow}</div>
   <div class="project-card-title">{project.title}</div>
   <div class="project-card-short">{project.short}</div>

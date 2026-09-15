@@ -15,6 +15,7 @@ interface Props {
 }
 
 const { project } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <BaseLayout
@@ -23,7 +24,7 @@ const { project } = Astro.props;
 >
   <div class="narrow-wrap">
     <div class="project-detail">
-      <a href="/projects" class="project-back">← All Projects</a>
+      <a href={`${base}/projects`} class="project-back">← All Projects</a>
 
       <div class="project-detail-eyebrow">{project.eyebrow}</div>
       <h1 class="project-detail-title">{project.title}</h1>
