@@ -26,6 +26,7 @@ export const publications: Publication[] = [
     title: 'Visual Cue Interactions in AR-Guided Needle Insertion: A Prostate Biopsy-Inspired Phantom Study',
     authors: 'Xinrui Zou, Mingxu Liu, Thomas T. Jones, Braden Millan, Sandeep Gurram, Peter A. Pinto, Raisa Z. Freidlin, Alejandro Martin-Gomez',
     venue: 'IEEE Transactions on Visualization and Computer Graphics (TVCG)',
+    status: 'Accepted',
     url: 'https://arxiv.org/abs/2608.27620',
     tags: ['AR/XR', 'Image-Guided Intervention'],
     featured: false

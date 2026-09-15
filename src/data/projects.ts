@@ -50,6 +50,44 @@ export const projects: Project[] = [
     featured: false
   },
   {
+    slug: 'xray-depth',
+    title: 'Single-View X-Ray Depth Estimation',
+    eyebrow: 'Medical AI · Depth Estimation',
+    short: 'Learning-based depth estimation from single X-ray images using synthetic data and registered real fluoroscopy.',
+    description:
+      'A DINO–DPT-based network for estimating depth from a single X-ray image, trained on a large synthetic dataset of X-ray/depth pairs generated via CUDA-accelerated DRR and ray casting, with additional real fluoroscopy supervision from CT-derived depth maps recovered through 2D–3D registration.',
+    contributions: [
+      'Designed the synthetic data generation pipeline using CUDA-accelerated DRR and ray casting to produce 11,000 X-ray/depth pairs.',
+      'Developed the 2D–3D registration pipeline to recover CT-derived depth supervision for 500+ real X-rays.',
+      'Adapted the DINO–DPT architecture for X-ray depth estimation.'
+    ],
+    stack: ['PyTorch', 'CUDA', 'DRR', 'Ray Casting', '2D–3D Registration', 'Python'],
+    metrics: [
+      { value: '11,000', label: 'synthetic X-ray/depth pairs' },
+      { value: '500+', label: 'real X-rays with CT-derived supervision' }
+    ],
+    comingSoon: true,
+    status: 'Ongoing',
+    featured: false
+  },
+  {
+    slug: 'prostate-biopsy-ar',
+    title: 'AR-Guided Prostate Biopsy',
+    eyebrow: 'AR/XR · Image-Guided Intervention',
+    short: 'Phantom study examining how AR visual cues affect needle-insertion guidance and targeting accuracy in a prostate-biopsy-inspired task.',
+    description:
+      'A controlled phantom study investigating how different augmented-reality visual cues influence spatial guidance and needle-placement performance in a prostate-biopsy-inspired task, identifying visualization strategies that improve targeting accuracy and procedural usability for AR-guided needle insertion.',
+    contributions: [
+      'Co-designed the phantom study setup and AR visualization conditions for needle-placement evaluation.',
+      'Investigated how visual cue interactions affect spatial guidance accuracy in a biopsy-inspired AR task.',
+      'Contributed to quantitative analysis of targeting error and procedural usability across visualization strategies.'
+    ],
+    stack: ['HoloLens 2', 'Unity', 'AR/XR', 'User Study', 'Phantom Experiment', 'Python'],
+    paper: 'https://arxiv.org/abs/2608.27620',
+    status: 'Accepted / preprint',
+    featured: false
+  },
+  {
     slug: 'xguidear',
     title: 'X-GuideAR: Fluoroscopic AR Navigation',
     eyebrow: 'AR/XR · Fluoroscopic Navigation',
@@ -118,27 +156,6 @@ export const projects: Project[] = [
     image: 'ONFH.PNG',
     status: 'Published',
     featured: true
-  },
-  {
-    slug: 'xray-depth',
-    title: 'Single-View X-Ray Depth Estimation',
-    eyebrow: 'Medical AI · Depth Estimation',
-    short: 'Learning-based depth estimation from single X-ray images using synthetic data and registered real fluoroscopy.',
-    description:
-      'A DINO–DPT-based network for estimating depth from a single X-ray image, trained on a large synthetic dataset of X-ray/depth pairs generated via CUDA-accelerated DRR and ray casting, with additional real fluoroscopy supervision from CT-derived depth maps recovered through 2D–3D registration.',
-    contributions: [
-      'Designed the synthetic data generation pipeline using CUDA-accelerated DRR and ray casting to produce 11,000 X-ray/depth pairs.',
-      'Developed the 2D–3D registration pipeline to recover CT-derived depth supervision for 500+ real X-rays.',
-      'Adapted the DINO–DPT architecture for X-ray depth estimation.'
-    ],
-    stack: ['PyTorch', 'CUDA', 'DRR', 'Ray Casting', '2D–3D Registration', 'Python'],
-    metrics: [
-      { value: '11,000', label: 'synthetic X-ray/depth pairs' },
-      { value: '500+', label: 'real X-rays with CT-derived supervision' }
-    ],
-    comingSoon: true,
-    status: 'Ongoing',
-    featured: false
   },
   {
     slug: 'pengwin',
