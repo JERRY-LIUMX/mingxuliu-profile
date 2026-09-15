@@ -131,7 +131,7 @@ export const projects: Project[] = [
       'Developed the 2D–3D registration pipeline to recover CT-derived depth supervision for 500+ real X-rays.',
       'Adapted the DINO–DPT architecture for X-ray depth estimation.'
     ],
-    stack: ['DINO', 'DPT', 'PyTorch', 'CUDA', 'DRR', 'Ray Casting', '2D–3D Registration', 'Python'],
+    stack: ['PyTorch', 'CUDA', 'DRR', 'Ray Casting', '2D–3D Registration', 'Python'],
     metrics: [
       { value: '11,000', label: 'synthetic X-ray/depth pairs' },
       { value: '500+', label: 'real X-rays with CT-derived supervision' }
