@@ -62,10 +62,6 @@ export const projects: Project[] = [
       'Adapted the DINO–DPT architecture for X-ray depth estimation.'
     ],
     stack: ['PyTorch', 'CUDA', 'DRR', 'Ray Casting', '2D–3D Registration', 'Python'],
-    metrics: [
-      { value: '11,000', label: 'synthetic X-ray/depth pairs' },
-      { value: '500+', label: 'real X-rays with CT-derived supervision' }
-    ],
     comingSoon: true,
     status: 'Ongoing',
     featured: false
@@ -83,6 +79,11 @@ export const projects: Project[] = [
       'Contributed to quantitative analysis of targeting error and procedural usability across visualization strategies.'
     ],
     stack: ['HoloLens 2', 'Unity', 'AR/XR', 'User Study', 'Phantom Experiment', 'Shader'],
+    metrics: [
+      { value: '26', label: 'participants' },
+      { value: '7', label: 'clinical experts' },
+      { value: '3', label: 'AR visual-cue techniques' }
+    ],
     paper: 'https://arxiv.org/abs/2608.27620',
     image: 'prostate.png',
     status: 'Accepted / preprint',
@@ -100,6 +101,11 @@ export const projects: Project[] = [
       'Contributed to the development of a context-aware taxonomy organizing existing systems, interaction paradigms, and clinical applications.'
     ],
     stack: ['Systematic Review', 'Taxonomy Development', 'AR/XR', 'Medical Visualization'],
+    metrics: [
+      { value: '313', label: 'studies reviewed' },
+      { value: '6-Dimension', label: 'taxonomy' },
+      { value: 'PubMed, IEEE Xplore & Scopus', label: 'databases searched' }
+    ],
     paper: 'https://arxiv.org/abs/2608.27644',
     image: 'AR Review.png',
     status: 'Accepted / preprint',
