@@ -34,7 +34,7 @@ export const projects: Project[] = [
     stack: ['PyTorch', 'TensorRT', 'CUDA', 'ROS 2', 'NVIDIA Isaac ROS/NITROS', 'Optical Tracking', 'Sensor Fusion', 'C++', 'Python'],
     comingSoon: true,
     status: 'Ongoing',
-    featured: true
+    featured: false
   },
   {
     slug: 'carpa',
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     stack: ['Kinematics', 'Inverse Kinematics', 'ROS 2', 'Unity', 'NDI Polaris', 'C-arm Calibration', 'C++', 'C#'],
     comingSoon: true,
     status: 'Ongoing',
-    featured: true
+    featured: false
   },
   {
     slug: 'xguidear',
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     image: 'X-GuideAR.png',
     imageAttribution: 'Figure from: M. Liu et al., "X-GuideAR: An Augmented Reality Framework to Mitigate Radiation Exposure during Fluoroscopic Guidance," arXiv:2607.10873, 2026. Manuscript under review at International Journal of Computer Assisted Radiology and Surgery.',
     status: 'Under review / preprint',
-    featured: true
+    featured: false
   },
   {
     slug: 'mri-registration',
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     paper: 'https://www.tandfonline.com/doi/abs/10.1080/21681163.2022.2157329',
     image: 'ONFH.PNG',
     status: 'Published',
-    featured: false
+    featured: true
   },
   {
     slug: 'xray-depth',
@@ -136,9 +136,9 @@ export const projects: Project[] = [
       { value: '11,000', label: 'synthetic X-ray/depth pairs' },
       { value: '500+', label: 'real X-rays with CT-derived supervision' }
     ],
-    image: 'X-ray Depth.PNG',
+    comingSoon: true,
     status: 'Ongoing',
-    featured: true
+    featured: false
   },
   {
     slug: 'pengwin',
@@ -161,7 +161,7 @@ export const projects: Project[] = [
     paper: 'https://ieeexplore.ieee.org/abstract/document/11322550',
     challenge: 'https://pengwin.grand-challenge.org/',
     status: 'Published',
-    featured: false
+    featured: true
   },
   {
     slug: 'ar-tracking',
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     ],
     paper: 'https://ieeexplore.ieee.org/abstract/document/11457564',
     status: 'Published',
-    featured: false
+    featured: true
   },
   {
     slug: 'arthroscopy',
@@ -206,7 +206,7 @@ export const projects: Project[] = [
     image: 'arthro.jpg',
     imageAttribution: 'Figure reproduced from: H. Shu, M. Liu, L. Seenivasan, et al., "Seamless Augmented Reality Integration in Arthroscopy: A Pipeline for Articular Reconstruction and Guidance," Healthcare Technology Letters, 12(1), e12119, 2025. Licensed under CC BY 4.0.',
     status: 'Published',
-    featured: false
+    featured: true
   },
   {
     slug: 'pediametrix',
