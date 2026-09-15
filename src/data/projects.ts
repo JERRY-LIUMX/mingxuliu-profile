@@ -183,6 +183,7 @@ export const projects: Project[] = [
       { value: '30%', label: 'reduction in tracking-loss rate' }
     ],
     paper: 'https://ieeexplore.ieee.org/abstract/document/11457564',
+    image: 'Extend your horizon.gif',
     status: 'Published',
     featured: true
   },
