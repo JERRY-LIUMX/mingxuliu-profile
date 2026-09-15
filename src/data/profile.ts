@@ -8,7 +8,7 @@ export const profile = {
   location: 'Baltimore, MD',
   email: 'mliu90@jh.edu',
   phone: '443-388-4581',
-  availability: 'Seeking 2027 internship and full-time opportunities',
+  availability: 'Seeking 2027 internship opportunities',
   photo: '/images/profile.jpg',
   links: {
     linkedin: 'https://www.linkedin.com/in/mingxu-liu/',
