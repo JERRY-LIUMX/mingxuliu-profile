@@ -41,7 +41,7 @@ const imageSrc = project.image
             class="project-figure"
           />
           {project.imageAttribution && (
-            <p class="figure-attribution">{project.imageAttribution}</p>
+            <p class="figure-attribution" set:html={project.imageAttribution} />
           )}
         </div>
       ) : (

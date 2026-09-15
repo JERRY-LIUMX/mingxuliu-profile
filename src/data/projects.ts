@@ -160,6 +160,8 @@ export const projects: Project[] = [
     ],
     paper: 'https://ieeexplore.ieee.org/abstract/document/11322550',
     challenge: 'https://pengwin.grand-challenge.org/',
+    image: 'pengwin.png',
+    imageAttribution: 'Adapted from the official PENGWIN challenge branding. Source: <a href="https://pengwin.grand-challenge.org/" target="_blank" rel="noopener">PENGWIN Grand Challenge</a>.',
     status: 'Published',
     featured: true
   },
@@ -221,6 +223,7 @@ export const projects: Project[] = [
       'Validated the 2D ML cranial-shape pipeline across 445 cases with high correlation to 3D reference.'
     ],
     stack: ['Computer Vision', 'RGB-D', '3D Reconstruction', 'Open3D', 'PyVista', 'Registration', 'Python'],
+    image: 'Infant Head.png',
     presentation: 'https://2023.pas-meeting.org/PosterAgenda.asp?startdate=4/28/2023&enddate=4/28/2023&BCFO=P&pfp=BrowsebyPosterSession',
     status: 'Industry R&D',
     featured: false
