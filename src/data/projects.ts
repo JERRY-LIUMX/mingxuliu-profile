@@ -82,8 +82,26 @@ export const projects: Project[] = [
       'Investigated how visual cue interactions affect spatial guidance accuracy in a biopsy-inspired AR task.',
       'Contributed to quantitative analysis of targeting error and procedural usability across visualization strategies.'
     ],
-    stack: ['HoloLens 2', 'Unity', 'AR/XR', 'User Study', 'Phantom Experiment', 'Python'],
+    stack: ['HoloLens 2', 'Unity', 'AR/XR', 'User Study', 'Phantom Experiment', 'Shader'],
     paper: 'https://arxiv.org/abs/2608.27620',
+    image: 'prostate.png',
+    status: 'Accepted / preprint',
+    featured: false
+  },
+  {
+    slug: 'ar-mr-review',
+    title: 'Medical AR/MR Review & Taxonomy',
+    eyebrow: 'AR/XR · Medical Visualization',
+    short: 'Systematic review and context-aware taxonomy of mixed- and augmented-reality methods for medical visualization.',
+    description:
+      'A systematic review of mixed- and augmented-reality methods for medical visualization, covering existing systems, interaction paradigms, and clinical applications. Includes the development of a context-aware taxonomy that organizes AR/MR approaches by visualization modality, clinical context, and interaction design.',
+    contributions: [
+      'Conducted a systematic review of mixed- and augmented-reality methods for medical visualization.',
+      'Contributed to the development of a context-aware taxonomy organizing existing systems, interaction paradigms, and clinical applications.'
+    ],
+    stack: ['Systematic Review', 'Taxonomy Development', 'AR/XR', 'Medical Visualization'],
+    paper: 'https://arxiv.org/abs/2608.27644',
+    image: 'AR Review.png',
     status: 'Accepted / preprint',
     featured: false
   },
