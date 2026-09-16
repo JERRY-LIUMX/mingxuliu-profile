@@ -231,14 +231,14 @@ export const projects: Project[] = [
     slug: 'continuum-robot',
     title: 'Real-Time Perception and Autonomous Control for Continuum Surgical Robots',
     eyebrow: 'Medical Robotics · Real-Time AI',
-    short: 'Low-latency multimodal reconstruction combining fluoroscopic segmentation, tracking, and robot encoders.',
+    short: 'Integrated surgical robotics framework combining real-time AI perception, multimodal sensing, medical image analysis, and robot control.',
     description:
-      'An end-to-end real-time perception based on sensor fusion and autonomous control system for continuum surgical robots.',
+      'Image-Guided Continuum-Robot Perception, Navigation & Control: Developing an integrated surgical robotics framework combining real-time AI perception, multimodal sensing, medical image analysis, and robot control. The system has demonstrated the accuracy and latency required for real-time robotic manipulation and is being extended toward automated execution of surgical tasks using NVIDIA-accelerated computing and robotic platforms.',
     contributions: [],
     stack: [],
     comingSoon: true,
     status: 'Ongoing',
-    featured: false
+    featured: true
   },
   {
     slug: 'carpa',
